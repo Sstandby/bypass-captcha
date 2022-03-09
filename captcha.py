@@ -44,7 +44,6 @@ def resolve(img):
     '''
 
     os.system(f"convert {dir}/{img} -morphology Erode Disk:2.2 captcha5.tif")
-    os.system("convert captcha5.tif -morphology Dilate Disk:1.2 captcha5.tif")
     os.system("convert captcha5.tif -gaussian-blur 0 -threshold 41% -paint 1 captcha5.tif")
     captcha = pytesseract.image_to_string(Image.open('captcha5.tif'),config='--oem 3 --psm 6 -c tessedit_char_whitelist=0123456789')
     captcha = captcha.replace(" ", "").strip()

@@ -7,10 +7,8 @@ import re
 import pathlib
 import pytesseract
 
-#ABCDEFGHIJKMNLOPKRSTUVWXYZ1
 contador = 0
-dir = '/home/gatete/Workspace/MM-S/auto-captcha/imagenes/captcha'
-directorio = pathlib.Path(dir)
+dir = f'{pathlib.Path(__file__).parent.absolute()}/bypass-captcha/imagenes/captcha'
 
 def processNum(Num, Num2):
 
